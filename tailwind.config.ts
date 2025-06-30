@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+       fontFamily: {
+        marker: ["Permanent Marker", "cursive"],
+        light: ["Shadows Into Light", "cursive"]
+      },
     },
   },
   plugins: [],
