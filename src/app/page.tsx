@@ -1,11 +1,10 @@
-import Image from "next/image";
+
 import Carousel from "./components/Carousel"
 import Hero from "./homeSections/Hero";
 import { EmblaOptionsType } from 'embla-carousel'
 import './css/carousel.css';
 import ContactForm from "./homeSections/Contact";
-import Footer from "./homeSections/Footer";
-import WhatsappLive from "./WhatsappLive";
+
 
 export default function Home() {
 
