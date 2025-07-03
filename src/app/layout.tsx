@@ -6,6 +6,7 @@ import Nav from "./homeSections/Nav";
 import Footer from "./homeSections/Footer";
 import "@fontsource/permanent-marker";
 import "@fontsource/shadows-into-light";
+import '@fontsource/unifrakturmaguntia';
 
 
 const geistSans = Geist({
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mignus_Art",
+  title: "Mr. Tattooz",
   description: "Tattoo Art by Miguel Rivas",
 };
 

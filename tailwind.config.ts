@@ -14,7 +14,8 @@ export default {
       },
        fontFamily: {
         marker: ["Permanent Marker", "cursive"],
-        light: ["Shadows Into Light", "cursive"]
+        light: ["Shadows Into Light", "cursive"],
+        gothic: ["UnifrakturMaguntia", "static" ],
       },
     },
   },
