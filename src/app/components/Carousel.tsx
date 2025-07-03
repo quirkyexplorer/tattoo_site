@@ -12,21 +12,33 @@ import useEmblaCarousel from 'embla-carousel-react'
 //   usePrevNextButtons
 // } from './EmblaCarouselArrowButtons'
 import { DotButton, useDotButton } from './CarouselDotButton'
+import { Image } from '@imagekit/next'
 
 const TWEEN_FACTOR_BASE = 0.84
+const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 
+// Utility function to ensure a number is within a specified range
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max)
 
+// define the Tattoo type
+type Tattoo = {
+  id: string; // includes letter + number, e.g., "a1"
+  name: string;
+  image: string; // path to image, e.g., "/glowingDragon.png"
+};
+
+// define the PropType for the component props
 type PropType = {
-  slides: number[]
+  tattoos : Tattoo[],
   options?: EmblaOptionsType
 }
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props
+  const { tattoos, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
   const tweenFactor = useRef(0)
+  const tweenNodes = useRef<HTMLElement[]>([])
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi)
@@ -38,11 +50,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   //   onNextButtonClick
   // } = usePrevNextButtons(emblaApi)
 
+  const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
+    tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
+      return slideNode.querySelector('.embla__parallax__layer') as HTMLElement
+    })
+  }, [])
+
   const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
     tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length
   }, [])
 
-  const tweenOpacity = useCallback(
+    const tweenParallax = useCallback(
     (emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
       const engine = emblaApi.internalEngine()
       const scrollProgress = emblaApi.scrollProgress()
@@ -73,9 +91,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             })
           }
 
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
-          const opacity = numberWithinRange(tweenValue, 0, 1).toString()
-          emblaApi.slideNodes()[slideIndex].style.opacity = opacity
+          const translate = diffToTarget * (-1 * tweenFactor.current) * 100
+          const tweenNode = tweenNodes.current[slideIndex]
+          tweenNode.style.transform = `translateX(${translate}%)`
         })
       })
     },
@@ -85,26 +103,40 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   useEffect(() => {
     if (!emblaApi) return
 
+    setTweenNodes(emblaApi)
     setTweenFactor(emblaApi)
-    tweenOpacity(emblaApi)
+    tweenParallax(emblaApi)
+
     emblaApi
+      .on('reInit', setTweenNodes)
       .on('reInit', setTweenFactor)
-      .on('reInit', tweenOpacity)
-      .on('scroll', tweenOpacity)
-      .on('slideFocus', tweenOpacity)
-  }, [emblaApi, tweenOpacity])
+      .on('reInit', tweenParallax)
+      .on('scroll', tweenParallax)
+      .on('slideFocus', tweenParallax)
+  }, [emblaApi, tweenParallax])
 
   return (
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <img
-                className="embla__slide__img"
-                src={`https://picsum.photos/600/350?v=${index}`}
-                alt="Your alt text"
-              />
+          {tattoos.map((tattoo) => (
+            <div className="embla__slide" key={tattoo.id}>
+              
+              <div className="embla__parallax">
+                <div className="embla__parallax__layer">
+
+                  <Image
+                    className="embla__slide__img embla__parallax__img"
+                    urlEndpoint={urlEndpoint} // New prop
+                    src={tattoo.image}
+                    width={500}
+                    height={500}
+                    alt={tattoo.name}
+                  />
+                  
+                </div>
+              </div>
+              
             </div>
           ))}
         </div>
