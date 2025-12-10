@@ -55,11 +55,11 @@ export default function WhatsappLive () {
                         </span>
                     </span>
                     <Image 
-                            src="/whatsAppIcon.png" 
-                            alt="Whatsapp"  
-                            width={40} 
-                            height={40} 
-                            className="whatsapp-icon z-50"/>
+                        src="/whatsAppIcon.png" 
+                        alt="Whatsapp"  
+                        width={40} 
+                        height={40} 
+                        className="whatsapp-icon z-50"/>
                 </a>
             </div>
         ); 

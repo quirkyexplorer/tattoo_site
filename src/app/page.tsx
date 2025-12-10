@@ -6,6 +6,9 @@ import './css/carousel.css';
 import ContactForm from "./homeSections/Contact";
 import Example
  from "./components/Example";
+
+
+
 export default function Home() {
 
   const Tattoos = [
@@ -24,6 +27,10 @@ export default function Home() {
   { id: "m13", name: "littleRose", image: "/littleRose.png" },
 ];
 
+  const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
+  const instaHandle:string = "https://www.instagram.com/mr.tattooz_";
+
+  // console.log("ImageKit endpoint:", urlEndpoint)
 
   const OPTIONS: EmblaOptionsType = { loop: true }
   const SLIDE_COUNT = Tattoos.length;
@@ -31,13 +38,12 @@ export default function Home() {
 
   return (
     <div id="top" className="flex flex-col items-center justify-items-center">      
-        <Hero/>
+        <Hero instaHandle={instaHandle} />
         <div className="pt-36 pb-36">
-          <Carousel  tattoos={Tattoos} options={OPTIONS}/>
+          <Carousel  tattoos={Tattoos} options={OPTIONS} url={urlEndpoint} />
         </div>
-        <div id="Contact">
+        <div id="Contact" className="w-full">
           <ContactForm/>
-          {/* <Example/> */}
         </div>
     </div>
   );

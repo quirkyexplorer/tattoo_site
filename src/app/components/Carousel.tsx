@@ -15,7 +15,7 @@ import { DotButton, useDotButton } from './CarouselDotButton'
 import { Image } from '@imagekit/next'
 
 const TWEEN_FACTOR_BASE = 0.84
-const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
+
 
 // Utility function to ensure a number is within a specified range
 const numberWithinRange = (number: number, min: number, max: number): number =>
@@ -31,11 +31,12 @@ type Tattoo = {
 // define the PropType for the component props
 type PropType = {
   tattoos : Tattoo[],
-  options?: EmblaOptionsType
+  options?: EmblaOptionsType,
+  url?: string 
 }
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { tattoos, options } = props
+  const { tattoos, options, url } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
   const tweenFactor = useRef(0)
   const tweenNodes = useRef<HTMLElement[]>([])
@@ -127,7 +128,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
                   <Image
                     className="embla__slide__img embla__parallax__img"
-                    urlEndpoint={urlEndpoint} // New prop
+                    urlEndpoint={url} // New prop
                     src={tattoo.image}
                     width={500}
                     height={500}
@@ -142,11 +143,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="embla__controls">
-        {/* <div className="embla__buttons">
+      {/* <div className="embla__controls">
+        <div className="embla__buttons">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div> */}
+        </div>
 
         <div className="embla__dots">
           {scrollSnaps.map((_, index) => (
@@ -159,7 +160,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

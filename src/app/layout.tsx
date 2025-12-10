@@ -8,7 +8,6 @@ import "@fontsource/permanent-marker";
 import "@fontsource/shadows-into-light";
 import '@fontsource/unifrakturmaguntia';
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,6 +23,10 @@ export const metadata: Metadata = {
   description: "Tattoo Art by Miguel Rivas",
 };
 
+const instaHandle:string = "https://www.instagram.com/mr.tattooz_";
+
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,18 +34,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         data-new-gr-c-s-check-loaded="8.927.0"
         data-gr-ext-installed=""
       >
         <Nav/>
-        
         {children}
-        <Footer/>
+        <Footer instaHandle={instaHandle}/> 
         <WhatsappLive/>
-       
+      
       </body>
+
     </html>
   );
 }

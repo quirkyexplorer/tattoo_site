@@ -1,16 +1,13 @@
 "use client"
+
 import Image from "next/image";
 
-
-
-export default function Footer() {
-
-    const instaHandle = "mr.tattooz_";
+export default function Footer({instaHandle}: { instaHandle: string }) {
 
     return (
 
     <div className="flex flex-col gap-10 items-center justify-center w-full shadow-md z-50 p-4">
-        <a href={`https://www.instagram.com/${instaHandle}`}>
+        <a href={instaHandle}>
             <Image
                 src="/instagram.png"
                 alt="instagram logo"

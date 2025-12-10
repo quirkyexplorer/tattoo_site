@@ -14,4 +14,4 @@ export default function Nav () {
                 <a href="">About me</a>
             </div>
     );
-}
+} 
