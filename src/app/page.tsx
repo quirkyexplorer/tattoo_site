@@ -7,8 +7,6 @@ import ContactForm from "./homeSections/Contact";
 import Example
  from "./components/Example";
 
-
-
 export default function Home() {
 
   const Tattoos = [

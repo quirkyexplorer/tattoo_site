@@ -15,9 +15,7 @@ export default function Footer({instaHandle}: { instaHandle: string }) {
                 height={50}
             />
         </a>
-
-        <a href="#top"> 
-            
+        <a href="#top">
             <Image
                 src="/upArrow.png"
                 alt="up arrow"
