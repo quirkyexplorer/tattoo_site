@@ -42,6 +42,7 @@ export default function Home() {
         <div className="pt-36 pb-36">
           <Carousel  tattoos={Tattoos} options={OPTIONS} url={urlEndpoint} />
         </div>
+        hello
         <div id="Contact" className="w-full">
           <ContactForm/>
         </div>
