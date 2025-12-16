@@ -66,7 +66,7 @@ export default function ContactForm () {
 
             
 
-            <form className="flex flex-col gap-4 items-center justify-center w-full shadow-md z-50 p-4 text-black">
+            <form className="flex flex-col gap-4 items-center justify-center w-full shadow-md p-4 text-black">
                 <h2 className="text-2xl font-bold">Contact Me</h2>
                 <input
                     type="text"

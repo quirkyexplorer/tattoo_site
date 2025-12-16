@@ -50,7 +50,7 @@ export default function WhatsappLive () {
                     href={whatsappLink} 
                     target="_blank" 
                     rel="noreferrer nonopener">
-                    <span className="absolute left-[7px] top-[7px] -z-50 size-10">
+                    <span className="absolute left-[7px] top-[7px]  size-10">
                         <span className="flex size-full items-end justify-center animate-ping rounded-full bg-green-500 opacity-75"> 
                         </span>
                     </span>
@@ -59,7 +59,7 @@ export default function WhatsappLive () {
                         alt="Whatsapp"  
                         width={40} 
                         height={40} 
-                        className="whatsapp-icon z-50"/>
+                        className="whatsapp-icon"/>
                 </a>
             </div>
         ); 
