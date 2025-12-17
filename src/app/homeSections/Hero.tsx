@@ -6,7 +6,7 @@ export default function Hero({instaHandle}: { instaHandle: string }) {
 
     return (
 
-        <div className="relative w-full h-screen">
+        <div  className="w-full h-screen">
             <Image 
                 src="/tattoo-hero.jpg"
                 alt="tattoo artist drawing stencil"

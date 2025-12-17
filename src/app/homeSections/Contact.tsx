@@ -20,7 +20,7 @@ export default function ContactForm () {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Here you would typically handle form submission, e.g., send data to an API
-        console.log('Form submitted:', formData);
+        // console.log('Form submitted:', formData);
         // Reset form after submission
         setFormData({ name: '', email: '', phone:'', message: '' });
     };
@@ -32,7 +32,7 @@ export default function ContactForm () {
     };
 
 
-    console.log("Contact method:", contactMethod);
+    // console.log("Contact method:", contactMethod);
 
     return (
 

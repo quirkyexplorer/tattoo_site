@@ -35,15 +35,19 @@ export default function Home() {
   // const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
   return (
-    <div id="top" className="flex flex-col items-center justify-items-center">      
-        <Hero instaHandle={instaHandle} />
-        <div className="pt-36 pb-36">
-          <Carousel  tattoos={Tattoos} options={OPTIONS} url={urlEndpoint} />
-        </div>
-        hello
-        <div id="Contact" className="w-full">
-          <ContactForm/>
-        </div>
+    <div id="top">
+      <div  className="flex flex-col items-center justify-items-center">      
+          <Hero instaHandle={instaHandle} />
+          <div className="pt-36 pb-36" >
+            <Carousel  tattoos={Tattoos} options={OPTIONS} url={urlEndpoint} />
+          </div>
+          hello
+          <div id="Contact" className="w-full">
+            <ContactForm/>
+          </div>
+      </div>
     </div>
+
+
   );
 }

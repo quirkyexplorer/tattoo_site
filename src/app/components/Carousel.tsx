@@ -117,50 +117,52 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi, tweenParallax])
 
   return (
-    <div className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {tattoos.map((tattoo) => (
-            <div className="embla__slide" key={tattoo.id}>
-              
-              <div className="embla__parallax">
-                <div className="embla__parallax__layer">
+    <div id='Designs'>
+      <div className="embla">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container">
+            {tattoos.map((tattoo) => (
+              <div className="embla__slide" key={tattoo.id}>
+                
+                <div className="embla__parallax">
+                  <div className="embla__parallax__layer">
 
-                  <Image
-                    className="embla__slide__img embla__parallax__img"
-                    urlEndpoint={url} // New prop
-                    src={tattoo.image}
-                    width={500}
-                    height={500}
-                    alt={tattoo.name}
-                  />
-                  
+                    <Image
+                      className="embla__slide__img embla__parallax__img"
+                      urlEndpoint={url} // New prop
+                      src={tattoo.image}
+                      width={500}
+                      height={500}
+                      alt={tattoo.name}
+                    />
+                    
+                  </div>
                 </div>
+                
               </div>
-              
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+        {/* <div className="embla__controls">
+          <div className="embla__buttons">
+            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+          </div>
+
+          <div className="embla__dots">
+            {scrollSnaps.map((_, index) => (
+              <DotButton
+                key={index}
+                onClick={() => onDotButtonClick(index)}
+                className={'embla__dot'.concat(
+                  index === selectedIndex ? ' embla__dot--selected' : ''
+                )}
+              />
+            ))}
+          </div>
+        </div> */}
       </div>
-
-      {/* <div className="embla__controls">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
-
-        <div className="embla__dots">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={'embla__dot'.concat(
-                index === selectedIndex ? ' embla__dot--selected' : ''
-              )}
-            />
-          ))}
-        </div>
-      </div> */}
     </div>
   )
 }
