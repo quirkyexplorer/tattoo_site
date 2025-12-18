@@ -38,10 +38,10 @@ export default function Nav () {
                 {/* big screen menu */}
                 <div className="md:flex flex-row gap-24 items-center justify-center absolute top-0 left-0 w-full shadow-md z-50 p-4 font-gothic text-3xl text-black
                 @max-md: hidden">
-                    <a href="#Designs" >Designs</a>
-                    <a href="#Policy" >Policy</a>
-                    <a href="#Contact" >Contact</a>
-                    <a href="#About_me" >About me</a>
+                    <a href="#Designs" className="text-black" >Designs</a>
+                    <a href="#Policy"  className="text-black">Policy</a>
+                    <a href="#Contact"  className="text-black">Contact</a>
+                    <a href="#About_me"  className="text-black">About me</a>
                 </div>
         </div>
     );
