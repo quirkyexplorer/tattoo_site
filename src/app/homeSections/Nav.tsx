@@ -1,5 +1,6 @@
 "use client"
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
+import Link from "next/link";
 
 export default function Nav () {
     //opens the nav bar when in mobile devices
@@ -26,7 +27,10 @@ export default function Nav () {
                             <a href="#Designs" onClick={handleClosedMenu}>Designs</a>
                             <a href="#Policy" onClick={handleClosedMenu}>Policy</a>
                             <a href="#Contact" onClick={handleClosedMenu}>Contact</a>
-                            <a href="#About_me" onClick={handleClosedMenu}>About me</a>
+                            <Link href="/AboutMe">About me</Link> 
+                            {/* <a  onClick={handleClosedMenu} >
+                                
+                            </a> */}
                         </div>
                         {/* the inset 0 and fixed allow for control of the listening */}
                         <div className="fixed inset-0 bg-black opacity-60 z-30 " onClick={handleClosedMenu}></div>
@@ -40,7 +44,8 @@ export default function Nav () {
                     <a href="#Designs" >Designs</a>
                     <a href="#Policy" >Policy</a>
                     <a href="#Contact" >Contact</a>
-                    <a href="#About_me" >About me</a>
+                    <Link href="/AboutMe">About me</Link> 
+                    {/* <a href="#About_me" >About me</a> */}
                 </div>
         </div>
     );
