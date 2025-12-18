@@ -22,25 +22,25 @@ export default function Nav () {
                     </button>
                     { hamburger ? 
                     <>
-                        <div className="flex flex-col gap-2 justify-center absolute top-0 left-12 pt-2 pb-4 px-4 font-gothic text-3xl text-white bg-black rounded-e-lg rounded-b-lg">
+                        <div className="flex flex-col gap-2 justify-center absolute top-0 left-12 pt-2 pb-4 px-4 font-gothic text-3xl text-white bg-black rounded-e-lg rounded-b-lg z-40">
                             <a href="#Designs" onClick={handleClosedMenu}>Designs</a>
                             <a href="#Policy" onClick={handleClosedMenu}>Policy</a>
                             <a href="#Contact" onClick={handleClosedMenu}>Contact</a>
                             <a href="#About_me" onClick={handleClosedMenu}>About me</a>
                         </div>
                         {/* the inset 0 and fixed allow for control of the listening */}
-                        {/* <div className="fixed inset-0 bg-black opacity-60 z-10 " onClick={handleClosedMenu}></div> */}
+                        <div className="fixed inset-0 bg-black opacity-60 z-30 " onClick={handleClosedMenu}></div>
                     </>
                     : null
                     }
                 </div>
                 {/* big screen menu */}
-                <div className=" text-black  md:flex flex-row gap-24 items-center justify-center absolute top-0 left-0 w-full shadow-md z-40 p-4 font-gothic text-3xl 
+                <div className=" md:flex flex-row text-black gap-24 items-center justify-center absolute top-0 left-0 w-full shadow-md z-40 p-4 font-gothic text-3xl 
                 @max-md: hidden">
-                    <a href="#Designs" className="text-black" >Designs</a>
-                    <a href="#Policy"  className="text-black">Policy</a>
-                    <a href="#Contact"  className="text-black">Contact</a>
-                    <a href="#About_me"  className="text-black">About me</a>
+                    <a href="#Designs" >Designs</a>
+                    <a href="#Policy" >Policy</a>
+                    <a href="#Contact" >Contact</a>
+                    <a href="#About_me" >About me</a>
                 </div>
         </div>
     );

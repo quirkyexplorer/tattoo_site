@@ -3,9 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion"
       
 export default function Hero({instaHandle}: { instaHandle: string }) {
-
     return (
-
         <div  className="w-full h-screen">
             <Image 
                 src="/tattoo-hero.jpg"
@@ -15,19 +13,15 @@ export default function Hero({instaHandle}: { instaHandle: string }) {
                 className="object-cover object-center"
                 quality={100}
             />
-
             {/* Overlay */}
-            {/* <div className="absolute inset-0 bg-gray-300/35" /> */}
-            
+            <div className="absolute inset-0 bg-gray-300/35" />
             {/* Content Container */}
             <div className="relative flex flex-col items-center justify-center h-full px-4 text-black">
-                {/* <h1 className="font-marker text-8xl mb-4">MIGNUGS ART</h1> */}
                 <Image
                     src="/logoText.png"
                     alt="logo"
                     width={900}
-                    height={200}
-                />
+                    height={200}/>
                     <motion.div
                         animate={{
                             rotate: [0, -10, 10, -10, 10, 0],
@@ -37,9 +31,8 @@ export default function Hero({instaHandle}: { instaHandle: string }) {
                             scale: 1.5,
                             transition: { duration: 0.5 },
                         }}
-                        
                         transition={{
-                                // 👇 Separate transitions for each property
+                        // 👇 Separate transitions for each property
                             rotate: {
                             duration: 1.2,       // slower shake
                             ease: "easeInOut",
@@ -51,8 +44,7 @@ export default function Hero({instaHandle}: { instaHandle: string }) {
                             ease: "easeInOut",
                             repeatType: "mirror", // scale up/down continuously
                             },
-                        }}
-                    >
+                        }}>
                         <a href={instaHandle} target="_blank" rel="noopener noreferrer">
                             <Image
                                 src={"/catLogo.png"}
@@ -61,10 +53,7 @@ export default function Hero({instaHandle}: { instaHandle: string }) {
                                 height={200}
                             />
                         </a>
-                    
-                    
                     </motion.div>
-
                 <p className="font-light text-4xl">by Miguel Rivas</p>
                   <p className="font-light text-2xl mb-4">Tattoo Artist</p>
             </div>
