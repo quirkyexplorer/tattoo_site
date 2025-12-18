@@ -29,7 +29,7 @@ export default function Nav () {
                             <a href="#About_me" onClick={handleClosedMenu}>About me</a>
                         </div>
                         {/* the inset 0 and fixed allow for control of the listening */}
-                        <div className="fixed inset-0 bg-black opacity-60 z-10 " onClick={handleClosedMenu}></div>
+                        {/* <div className="fixed inset-0 bg-black opacity-60 z-10 " onClick={handleClosedMenu}></div> */}
                     </>
                     : null
                     }
