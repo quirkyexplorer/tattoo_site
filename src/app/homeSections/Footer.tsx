@@ -6,7 +6,7 @@ export default function Footer({instaHandle}: { instaHandle: string }) {
 
     return (
 
-    <div className="flex flex-col gap-10 items-center justify-center w-full shadow-md z-50 p-4">
+    <div className="flex flex-col gap-10 items-center justify-center w-full shadow-md  p-4">
         <a href={instaHandle}>
             <Image
                 src="/instagram.png"

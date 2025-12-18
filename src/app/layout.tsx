@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en">
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  z-0`}
         data-new-gr-c-s-check-loaded="8.927.0"
         data-gr-ext-installed=""
       >

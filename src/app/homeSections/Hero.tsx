@@ -20,7 +20,7 @@ export default function Hero({instaHandle}: { instaHandle: string }) {
             {/* <div className="absolute inset-0 bg-gray-300/35" /> */}
             
             {/* Content Container */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-black">
+            <div className="relative flex flex-col items-center justify-center h-full px-4 text-black">
                 {/* <h1 className="font-marker text-8xl mb-4">MIGNUGS ART</h1> */}
                 <Image
                     src="/logoText.png"
