@@ -1,17 +1,19 @@
 "use client"
 import { useState, useEffect} from 'react';
-
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import path from 'path';
 export default function Nav () {
     //opens the nav bar when in mobile devices
     const [ hamburger, setHamburger] = useState(false);
-
     const handleOpenMenu = () => {
         setHamburger(hamburger ? false : true)
     }
-
     const handleClosedMenu = () => {
         setHamburger(false)
     }
+    const pathName = usePathname();
+    const isHome = pathName === "/"; // boolean 
     
     return (
         <div >
@@ -23,10 +25,11 @@ export default function Nav () {
                     { hamburger ? 
                     <>
                         <div className="flex flex-col gap-2 justify-center absolute top-0 left-12 pt-2 pb-4 px-4 font-gothic text-3xl text-white bg-black rounded-e-lg rounded-b-lg z-40">
-                            <a href="#Designs" onClick={handleClosedMenu}>Designs</a>
-                            <a href="#Policy" onClick={handleClosedMenu}>Policy</a>
-                            <a href="#Contact" onClick={handleClosedMenu}>Contact</a>
-                            <a href="#About_me" onClick={handleClosedMenu}>About me</a>
+                            {!isHome && <Link href="/" onClick={handleClosedMenu}>Home</Link>}
+                            <Link href="/#Designs" onClick={handleClosedMenu}>Designs</Link>
+                            <Link href="/Policy" onClick={handleClosedMenu} >Policy</Link>
+                            <Link href="/#Contact" onClick={handleClosedMenu}>Contact</Link>
+                            <Link href="/#About_me" onClick={handleClosedMenu}>About me</Link>
                         </div>
                         {/* the inset 0 and fixed allow for control of the listening */}
                         <div className="fixed inset-0 bg-black opacity-60 z-30 " onClick={handleClosedMenu}></div>
@@ -37,10 +40,13 @@ export default function Nav () {
                 {/* big screen menu */}
                 <div className=" md:flex flex-row text-black gap-24 items-center justify-center absolute top-0 left-0 w-full shadow-md z-40 p-4 font-gothic text-3xl 
                 @max-md: hidden">
-                    <a href="#Designs" >Designs</a>
-                    <a href="#Policy" >Policy</a>
-                    <a href="#Contact" >Contact</a>
-                    <a href="#About_me" >About me</a>
+                    {}
+                    
+                    <Link href="/#Designs" >Designs</Link>
+                    <Link href="/Policy">Policy</Link>
+                    {!isHome && <Link href="/">Home</Link>}
+                    <Link href="/#Contact">Contact</Link>
+                    <Link href="/#About_me" >About me</Link>
                 </div>
         </div>
     );

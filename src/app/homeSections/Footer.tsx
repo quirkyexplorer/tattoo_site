@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer({instaHandle}: { instaHandle: string }) {
@@ -15,14 +15,14 @@ export default function Footer({instaHandle}: { instaHandle: string }) {
                 height={50}
             />
         </a>
-        <a href="#top">
+        <Link href="/">
             <Image
                 src="/upArrow.png"
                 alt="up arrow"
                 width={20}
                 height={20}
             />
-        </a>
+        </Link>
     </div>
     );
 }
