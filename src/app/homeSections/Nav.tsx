@@ -29,7 +29,7 @@ export default function Nav () {
                             <Link href="/#Designs" onClick={handleClosedMenu}>Designs</Link>
                             <Link href="/Policy" onClick={handleClosedMenu} >Policy</Link>
                             <Link href="/#Contact" onClick={handleClosedMenu}>Contact</Link>
-                            <Link href="/#About_me" onClick={handleClosedMenu}>About me</Link>
+                            <Link href="/About_Me" onClick={handleClosedMenu}>About me</Link>
                         </div>
                         {/* the inset 0 and fixed allow for control of the listening */}
                         <div className="fixed inset-0 bg-black opacity-60 z-30 " onClick={handleClosedMenu}></div>
@@ -46,7 +46,7 @@ export default function Nav () {
                     <Link href="/Policy">Policy</Link>
                     {!isHome && <Link href="/">Home</Link>}
                     <Link href="/#Contact">Contact</Link>
-                    <Link href="/#About_me" >About me</Link>
+                    <Link href="/About_Me"  >About me</Link>
                 </div>
         </div>
     );

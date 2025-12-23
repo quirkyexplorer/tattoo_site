@@ -10,19 +10,19 @@ import Example
 export default function Home() {
 
   const Tattoos = [
-  { id: "a1", name: "glowingDragon", image: "/glowingDragon.png" },
-  { id: "b2", name: "perfectBlue", image: "/perfectBlue.png" },
-  { id: "c3", name: "TomieKawakami", image: "/TomieKawakami.png" },
-  { id: "d4", name: "spider", image: "/spider.png" },
+  { id: "a1", name: "glowingDragon", image: "/tattoo/glowingDragon.png" },
+  { id: "b2", name: "perfectBlue", image: "/tattoo/perfectBlue.png" },
+  { id: "c3", name: "TomieKawakami", image: "/tattoo/TomieKawakami.png" },
+  { id: "d4", name: "spider", image: "/tattoo/spider.png" },
   { id: "e5", name: "glowingLeon", image: "/glowingLeon.png" },
-  { id: "f6", name: "Megumi", image: "/megumi.png" },
-  { id: "g7", name: "butterflies", image: "/butterflies.png" },
-  { id: "h8", name: "cherryblossom", image: "/cherryblossom.png" },
-  { id: "i9", name: "colibri", image: "/colibri.png" },
-  { id: "j10", name: "neonTiger", image: "/neonTiger.png" },
-  { id: "k11", name: "cats", image: "/cats.png" },
-  { id: "l12", name: "flowers", image: "/flowers.png" },
-  { id: "m13", name: "littleRose", image: "/littleRose.png" },
+  { id: "f6", name: "Megumi", image: "/tattoo/megumi.png" },
+  { id: "g7", name: "butterflies", image: "/tattoo/butterflies.png" },
+  { id: "h8", name: "cherryblossom", image: "/tattoo/cherryblossom.png" },
+  { id: "i9", name: "colibri", image: "/tattoo/colibri.png" },
+  { id: "j10", name: "neonTiger", image: "/tattoo/neonTiger.png" },
+  { id: "k11", name: "cats", image: "/tattoo/cats.png" },
+  { id: "l12", name: "flowers", image: "/tattoo/flowers.png" },
+  { id: "m13", name: "littleRose", image: "/tattoo/littleRose.png" },
 ];
 
   const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
