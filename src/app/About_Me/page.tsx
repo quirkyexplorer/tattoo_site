@@ -2,7 +2,7 @@ import { Image } from "@imagekit/next";
 export default function AboutMePage() {
     const url = process.env.NEXT_PUBLIC_URL_ENDPOINT;
   return (
-    <main className="min-h-screen bg-gradient-to-b from-sky-100  to-sky-200
+    <main className="min-h-screen bg-gradient-to-b from-gray-200 to-gray-800
     flex flex-col items-center 
     md:flex-row gap-12 justify-center px-4 pt-14
      ">
