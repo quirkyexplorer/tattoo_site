@@ -15,7 +15,7 @@ export default function AboutMePage() {
             className="rounded-2xl"
         />
       <section className="w-full 
-      md:max-w-2xl w-1/2 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-8 space-y-8">
+      md:max-w-2xl md:w-1/2 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-8 space-y-8">
         {/* Title */}
         <h1 className="text-3xl font-bold text-center text-black font-gothic">
           About
