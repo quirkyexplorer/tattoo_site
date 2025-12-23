@@ -1,6 +1,6 @@
 export default function PolicyPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-sky-100 to-sky-200 flex items-center justify-center px-4 pt-14">
+    <main className="min-h-screen bg-gradient-to-b from-gray-200 to-gray-800 flex items-center justify-center px-4 pt-14">
       <section className="max-w-2xl w-full bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-8 space-y-8">
         
         {/* Title */}
