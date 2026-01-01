@@ -3,13 +3,12 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 export default function WhatsappLive () {
+    const whatsappNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER;
+    const baseUrl =  process.env.NEXT_PUBLIC_WHATSAPP_URL;
 
-    const whatsappNumber = "14802780928"
-    const baseUrl = "https://api.whatsapp.com/send/";
-    // const instaLink = "https://www.youtube.com"
-    // const encodedMessage = `Hello, check out my insta: ${instaLink}`
     const encodedMessage = `Hello I'm interested in your tattoo designs `
     const whatsappLink = `${baseUrl}?phone=${whatsappNumber}&text=${encodedMessage}&type=phone_number&app_absent=0`;
+
 
     useEffect( () => {
         const handleScroll = () => {

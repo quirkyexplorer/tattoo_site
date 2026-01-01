@@ -4,8 +4,6 @@ import Hero from "./homeSections/Hero";
 import { EmblaOptionsType } from 'embla-carousel'
 import './css/carousel.css';
 import ContactForm from "./homeSections/Contact";
-import Example
- from "./components/Example";
 
 export default function Home() {
 
@@ -26,7 +24,7 @@ export default function Home() {
 ];
 
   const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
-  const instaHandle:string = "https://www.instagram.com/mr.tattooz_";
+  const instaHandle = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "";
 
   // console.log("ImageKit endpoint:", urlEndpoint)
 
@@ -41,13 +39,11 @@ export default function Home() {
           <div className="pt-36 pb-36" >
             <Carousel  tattoos={Tattoos} options={OPTIONS} url={urlEndpoint} />
           </div>
-          hello
-          <div id="Contact" className="w-full">
+          {/* <div id="Contact" className="w-full">
             <ContactForm/>
-          </div>
+          </div> */}
       </div>
     </div>
-
 
   );
 }

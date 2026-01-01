@@ -60,7 +60,7 @@ export default function ContactForm () {
                         onChange={handleContactMethodChange}
                     >  
                     </input>
-                    0phone</label>
+                    phone</label>
 
                 </fieldset>
 
