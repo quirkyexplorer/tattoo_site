@@ -23,6 +23,8 @@ export default function Footer({instaHandle}: { instaHandle: string }) {
                 height={20}
             />
         </Link>
+
+        <div className="justify-self-end  text-gray-500">© 2026 Daniel Segura. All rights reserved. </div>
     </div>
     );
 }
